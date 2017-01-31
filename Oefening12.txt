@@ -1,0 +1,5 @@
+#Vraag 1: 
+Site ensembl.org --> Search: Mouse for rs4224828 --> druk op go --> bij location --> druk op view in location tab
+
+#Vraag 2:
+Site ensembl.org --> Search Zebrafish for MYCN --> location: GRCz10:CM002904.1 --> 
