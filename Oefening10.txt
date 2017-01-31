@@ -1,0 +1,22 @@
+
+Vraag 1: 
+SELECT gene_name, (seq_region_end - seq_region_start) as length FROM gene ORDER BY length DESC LIMIT 1;
+naam = TMPRSS3, length = 5379013
+
+Vraag 2: 
+SELECT gene_name, COUNT(transcript_id) as amount FROM transcript JOIN gene ON transcript.gene_id = gene.gene_id GROUP BY gene_name DESC LIMIT 1;
+naam = ZZZ3, aantal transcripten = 11
+
+Vraag 3: 
+SELECT chromosome, COUNT(gene_id) as amount FROM gene WHERE description like "%cancer%" GROUP BY chromosome ORDER BY amount DESC LIMIT 1, 1;
+naam chromosoom = 9
+SELECT chromosome, gene.gene_id, COUNT(exon_id) as amount FROM gene JOIN transcript ON gene.gene_id = transcript.gene_id JOIN exon_transcript ON transcript.transcript_id = exon_transcript.transcript_ID WHERE chromosome =9 AND gene.description like "%cancer%" GROUP BY gene.gene_id ORDER BY amount DESC LIMIT 1; 
+aantal exonen = 72
+
+Vraag 4:
+SELECT COUNT(*) FROM exon;
+aantal van exontabel = 642590
+SELECT COUNT(*) FROM exon_transcript_tabel;
+aantal van exon_transcript_tabel = 1178393
+=> Verschil: er bestaan meerdere exon_transcripten per exon. 
+
