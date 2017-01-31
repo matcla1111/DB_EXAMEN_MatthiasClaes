@@ -1,0 +1,20 @@
+#Normalisatie van het labo tot 3NF
+
+UNF = Unnormalized Form:
+DB[personeelnr, (naam, geboortedatum), labocode, labonaam, projectcode, projectomschrijving, projectsupervisor]
+
+
+1NF = First Normalized Form
+DB[personeelnr, naam, geboortedatum, labocode, labonaam, projectcode, projectomschrijving, projectsupervisor]
+-> keys: persooneelnr, labocode, projectcode
+
+2NF = Second Normalized Form 
+DB_personeel[persoonlnr(=PK), naam, geboortedatum, projectcode(=FK)]
+R1_labo[labocode(=PK), labonaam]
+R2_project[projectcode(=PK), projectomschrijving, projectsupervisor, labocode(=FK)]
+
+3NF = Third Normalized Form 
+DB_personeel[persoonlnr(=PK), naam, geboortedatum, projectcode(=FK)]
+R1_labo[labocode(=PK), labonaam]
+R2_project[projectcode(=PK), projectomschrijving, projectsupervisor, labocode(=FK)]
+2NF = 3NF
